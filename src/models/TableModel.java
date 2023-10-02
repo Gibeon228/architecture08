@@ -66,7 +66,7 @@ public class TableModel implements Model {
                 if (reservation.getId() == oldReservation) {
                     reservation.setDate(reservationDate);
                     reservation.setName(name);
-                    for (Table table1 : tables) {
+                    for (Table table1 : tables) { // можно ли вот это заменить на что-то более правильное, потому что, ну вот лично по мне, это какой-то бредовый тройной цикл
                         if (table1.getNo() == tableNo) {
                             reservation.setTable(table1); // Вообще тут не уверен, по интуиции думаю, что мы просто заменяем ссылку на объект, но не сам объект, если сам объект, то не знаю вообще как сделать правильно
                             Collection<Reservation> reservations = table1.getReservations();
